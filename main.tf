@@ -41,7 +41,7 @@ resource "aws_efs_mount_target" "default" {
 
 resource "aws_security_group" "efs" {
   count       = var.enabled ? 1 : 0
-  name        = format("%s-efs", module.label.id)
+  name        = format("%s-sg", module.label.id)
   description = "EFS Security Group"
   vpc_id      = var.vpc_id
 
